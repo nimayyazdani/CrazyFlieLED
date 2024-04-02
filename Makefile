@@ -31,6 +31,17 @@ ARCH_CFLAGS += -Wno-array-bounds -Wno-stringop-overread
 ARCH_CFLAGS += -Wno-stringop-overflow
 ARCH_CFLAGS += -DSTM32F4XX -DSTM32F40_41xxx -DHSE_VALUE=8000000 -DUSE_STDPERIPH_DRIVER
 
+#----------------------------------------------------------------------------------------------------------------
+
+
+
+
+ARCH_CFLAGS += -DDECK_FORCE = ledDeck
+
+
+
+
+#----------------------------------------------------------------------------------------------------------------
 FREERTOS = $(srctree)/vendor/FreeRTOS
 PORT = $(FREERTOS)/portable/GCC/ARM_CM4F
 LIB = $(srctree)/src/lib
@@ -169,6 +180,12 @@ flash_dfu:
 #call this target directly if CF cannont be flashed automatically through flash_dfu
 flash_dfu_manual:
 	$(DFU_UTIL) -d 0483:df11 -a 0 -s 0x08004000:leave -D $(PROG).bin
+
+#Drivers
+PROJ_OBJ_CF2 += wheel_driver.o
+#DECK API
+PROJ_OBJ_CF2 += wheelDeck.o
+
 
 #STM utility targets
 halt:

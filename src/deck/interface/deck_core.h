@@ -48,12 +48,22 @@ bool deckTest(void);
 #define DECK_USING_PC10 (1<<1)
 #define DECK_USING_PB7  (1<<2)
 #define DECK_USING_PB6  (1<<3)
+
 #define DECK_USING_IO_1 (1<<4)
+#define DECK_USING_PB8  (1<<4)
+
+#define DECK_USING_PB5  (1<<5)
 #define DECK_USING_IO_2 (1<<5)
+
 #define DECK_USING_IO_3 (1<<6)
 #define DECK_USING_IO_4 (1<<7)
+
 #define DECK_USING_PA2  (1<<8)
+#define DECK_USING_TX2  (1<<8)
+
 #define DECK_USING_PA3  (1<<9)
+#define DECK_USING_RX2  (1<<9)
+
 #define DECK_USING_PA5  (1<<10)
 #define DECK_USING_PA6  (1<<11)
 #define DECK_USING_PA7  (1<<12)
